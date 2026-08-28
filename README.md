@@ -64,7 +64,7 @@ export const environment = {
 
 ### Step 1: Push Frontend to its Git Repository
 ```bash
-git remote add origin <your-frontend-git-repo-url>
+git remote add origin https://github.com/mrCoderPj04/sofo-mail.git
 git push -u origin main
 ```
 
