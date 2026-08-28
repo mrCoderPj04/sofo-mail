@@ -1,0 +1,14 @@
+services:
+  # ----------------------------------------------------------------------------
+  # PJSOFONIC SOFOMail Frontend Web Service (Angular 19 + Nginx)
+  # ----------------------------------------------------------------------------
+  - type: web
+    name: sofomail-frontend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    envVars:
+      - key: NODE_ENV
+        value: production

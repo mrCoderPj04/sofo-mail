@@ -1,0 +1,234 @@
+/* ==========================================================================
+   PJSOFONIC SOFOMail Design System Tokens & Base Styles
+   Sophisticated, Calm, Trustworthy, Accessible, 8px Spacing System
+   ========================================================================== */
+
+:root {
+  /* Font Stack */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* 8px Spacing Scale */
+  --space-0-5: 4px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-2-5: 20px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Border Radii - Restrained & Professional */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows - Subtle and Restrained */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-dropdown: 0 12px 24px -4px rgba(0, 0, 0, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.06);
+
+  /* Brand Accents */
+  --brand-primary: #0284c7;
+  --brand-primary-hover: #0369a1;
+  --brand-primary-subtle: #f0f9ff;
+  --brand-accent: #0ea5e9;
+  --brand-dark-navy: #0f172a;
+}
+
+/* Light Theme Variables */
+html[data-theme="light"], body.theme-light {
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-hover: #f1f5f9;
+  --bg-surface-active: #e2e8f0;
+  --bg-surface-selected: #f0f9ff;
+  --bg-surface-unread: #ffffff;
+  --bg-sidebar: #f8fafc;
+  --bg-input: #ffffff;
+  --bg-backdrop: rgba(15, 23, 42, 0.4);
+
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-focus: #0284c7;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --badge-bg-neutral: #f1f5f9;
+  --badge-text-neutral: #475569;
+
+  --status-success: #16a34a;
+  --status-success-bg: #f0fdf4;
+  --status-warning: #d97706;
+  --status-warning-bg: #fffbeb;
+  --status-error: #dc2626;
+  --status-error-bg: #fef2f2;
+  --status-info: #0284c7;
+  --status-info-bg: #f0f9ff;
+}
+
+/* Dark Theme Variables (Layered Dark Surfaces - Never Pure Black) */
+html[data-theme="dark"], body.theme-dark {
+  --bg-app: #121519;
+  --bg-surface: #181c22;
+  --bg-surface-elevated: #20252d;
+  --bg-surface-hover: #262c36;
+  --bg-surface-active: #2f3642;
+  --bg-surface-selected: #172a3a;
+  --bg-surface-unread: #1e232b;
+  --bg-sidebar: #13171d;
+  --bg-input: #1b2027;
+  --bg-backdrop: rgba(0, 0, 0, 0.65);
+
+  --border-subtle: #252b36;
+  --border-medium: #333b49;
+  --border-focus: #38bdf8;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --text-inverse: #0f172a;
+
+  --badge-bg-neutral: #222934;
+  --badge-text-neutral: #cbd5e1;
+
+  --status-success: #22c55e;
+  --status-success-bg: rgba(34, 197, 94, 0.12);
+  --status-warning: #f59e0b;
+  --status-warning-bg: rgba(245, 158, 11, 0.12);
+  --status-error: #ef4444;
+  --status-error-bg: rgba(239, 68, 68, 0.12);
+  --status-info: #38bdf8;
+  --status-info-bg: rgba(56, 189, 248, 0.12);
+
+  --brand-primary-subtle: #172a3a;
+}
+
+/* System Theme Fallbacks (Prefers Dark Mode by OS) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]),
+  body.theme-system {
+    --bg-app: #121519;
+    --bg-surface: #181c22;
+    --bg-surface-elevated: #20252d;
+    --bg-surface-hover: #262c36;
+    --bg-surface-active: #2f3642;
+    --bg-surface-selected: #172a3a;
+    --bg-surface-unread: #1e232b;
+    --bg-sidebar: #13171d;
+    --bg-input: #1b2027;
+    --bg-backdrop: rgba(0, 0, 0, 0.65);
+
+    --border-subtle: #252b36;
+    --border-medium: #333b49;
+    --border-focus: #38bdf8;
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+    --text-inverse: #0f172a;
+
+    --badge-bg-neutral: #222934;
+    --badge-text-neutral: #cbd5e1;
+
+    --status-success: #22c55e;
+    --status-success-bg: rgba(34, 197, 94, 0.12);
+    --status-warning: #f59e0b;
+    --status-warning-bg: rgba(245, 158, 11, 0.12);
+    --status-error: #ef4444;
+    --status-error-bg: rgba(239, 68, 68, 0.12);
+    --status-info: #38bdf8;
+    --status-info-bg: rgba(56, 189, 248, 0.12);
+
+    --brand-primary-subtle: #172a3a;
+  }
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Accessibility: Focus visible outline */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
