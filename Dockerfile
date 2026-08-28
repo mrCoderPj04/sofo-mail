@@ -13,7 +13,7 @@ RUN npm ci
 
 # Copy source and build production bundle
 COPY . .
-RUN npm run build
+RUN npm run build -- --configuration production
 
 # Production Serving Stage
 FROM nginx:alpine
@@ -22,8 +22,8 @@ WORKDIR /usr/share/nginx/html
 # Clean default nginx files
 RUN rm -rf ./*
 
-# Copy built Angular distribution assets
-COPY --from=build /app/dist/sofomail ./
+# Copy built Angular distribution assets from browser directory
+COPY --from=build /app/dist/sofomail/browser ./
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Render dynamic port binding
